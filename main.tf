@@ -11,13 +11,20 @@ resource "random_string" "random" {
   lower = true
   
 }
+resource "time_sleep" "wait_30_seconds" {
+  depends_on = [azurerm_resource_group.example]
 
+  create_duration = "30s"
+}
+resource "null_resource" "next" {
+  depends_on = [time_sleep.wait_30_seconds]
+}
 module "azure_network" {
   source              = "./network" 
   network_resource_group_name = azurerm_resource_group.example.name
   network_location = azurerm_resource_group.example.location
   virtual_network_name = var.virtual_network_name
-  depends_on = [azurerm_resource_group.example]
+  depends_on = [null_resource.next]
 }
 
 resource "azurerm_storage_account" "example" {
