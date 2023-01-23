@@ -13,7 +13,6 @@ resource "random_string" "random" {
 }
 module "azure_network" {
   source              = "./network" 
-  virtual_network_name= var.resource_group_name
 }
 
 resource "azurerm_storage_account" "example" {
