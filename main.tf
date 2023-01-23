@@ -12,6 +12,13 @@ resource "random_string" "random" {
   
 }
 
+module "azure_network" {
+  source              = "./network" 
+  network_resource_group_name = azurerm_resource_group.example.name
+  network_location = azurerm_resource_group.example.location
+  virtual_network_name = var.virtual_network_name
+}
+
 resource "azurerm_storage_account" "example" {
   name                = "${var.storage_account_name}${random_string.random.id}"
   resource_group_name = azurerm_resource_group.example.name
@@ -31,9 +38,3 @@ resource "azurerm_storage_account" "example" {
   }
 }
 
-module "azure_network" {
-  source              = "./network" 
-  network_resource_group_name = azurerm_resource_group.example.name
-  network_location = azurerm_resource_group.example.location
-  virtual_network_name = var.virtual_network_name
-}
