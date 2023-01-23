@@ -3,11 +3,7 @@ variable "location" {
   type        = string
   default = "southeastasia"
 }
-variable "resource_group_name" {
-  description = "The name of the resource group"
-  type        = string
-  default = "rgdev"
-}
+
 variable "virtual_network_name" {
   description = "The name of the virtual network name"
   type        = string
