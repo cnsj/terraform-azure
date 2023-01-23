@@ -17,7 +17,7 @@ module "azure_network" {
   network_resource_group_name = azurerm_resource_group.example.name
   network_location = azurerm_resource_group.example.location
   virtual_network_name = var.virtual_network_name
-  depends = [azurerm_resource_group.example.id]
+  depends_on = [azurerm_resource_group.example]
 }
 
 resource "azurerm_storage_account" "example" {
