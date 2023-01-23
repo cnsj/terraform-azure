@@ -13,6 +13,8 @@ resource "random_string" "random" {
 }
 module "azure_network" {
   source              = "./network" 
+  network_resource_group_name = azurerm_resource_group.example.name
+  network_location = azurerm_resource_group.example.location
 }
 
 resource "azurerm_storage_account" "example" {
