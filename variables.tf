@@ -19,9 +19,3 @@ variable "storage_account_tier" {
   type        = string
   default = "Standard"
 }
-
-variable "virtual_network_name" {
-  description = "Virtual Network Name"
-  type        = string
-  default = "vnet"
-}
