@@ -12,3 +12,11 @@ resource "azurerm_subnet" "example" {
   address_prefixes     = ["10.0.3.0/24"]
   service_endpoints    = ["Microsoft.Sql", "Microsoft.Storage"]
 }
+
+resource "azurerm_subnet" "newsubnet" {
+  name                 = "new-testsubnet"
+  resource_group_name  = var.network_resource_group_name
+  virtual_network_name = var.virtual_network_name
+  address_prefixes     = ["10.0.4.0/24"]
+  service_endpoints    = ["Microsoft.Sql", "Microsoft.Storage"]
+}
