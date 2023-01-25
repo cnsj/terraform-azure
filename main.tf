@@ -38,6 +38,12 @@ resource "azurerm_storage_account" "example" {
   }
 }
 
+resource "azurerm_storage_share" "example" {
+  name                 = "aks-storage-share"
+  storage_account_name = "${azurerm_storage_account.example.name}"
+  quota                = 5
+}
+
 module "aks" {
   source = "./aks"
   aks_resource_group_name = azurerm_resource_group.example.name
