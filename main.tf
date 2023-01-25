@@ -46,3 +46,8 @@ resource "azurerm_storage_account" "example" {
   }
 }
 
+module "aks" {
+  source = "./aks"
+  aks_resource_group_name = azurerm_resource_group.example.name
+  aks_location = azurerm_resource_group.example.location  
+}
