@@ -38,7 +38,7 @@ resource "azurerm_storage_account" "example" {
   }
 }
 
-resource "azurerm_storage_share" "testshare" {
+resource "azurerm_storage_share" "example" {
   name                 = "aks-storage-share"
   storage_account_name = "${azurerm_storage_account.example.name}"
   quota                = 5
