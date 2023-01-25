@@ -19,10 +19,6 @@ resource "azurerm_kubernetes_cluster" "default" {
     client_secret = var.client_secret
   }
 
-  role_based_access_control {
-    enabled = true
-  }
-
   tags = {
     environment = "Demo"
   }
