@@ -25,3 +25,17 @@ variable "virtual_network_name" {
   type        = string
   default = "vnet"
 }
+
+variable "client_id" {
+  type        = string
+  description = "(Optional) The Client ID (appId) for the Service Principal used for the AKS deployment"
+  default     = ""
+  nullable    = false
+}
+
+variable "client_secret" {
+  type        = string
+  description = "(Optional) The Client Secret (password) for the Service Principal used for the AKS deployment"
+  default     = ""
+  nullable    = false
+}
