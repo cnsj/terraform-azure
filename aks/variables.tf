@@ -8,14 +8,14 @@ variable "aks_resource_group_name" {
   type        = string
   default = "rgdev"
 }
-variable "client_id" {
+variable "aks_client_id" {
   type        = string
   description = "(Optional) The Client ID (appId) for the Service Principal used for the AKS deployment"
   default     = ""
   nullable    = false
 }
 
-variable "client_secret" {
+variable "aks_client_secret" {
   type        = string
   description = "(Optional) The Client Secret (password) for the Service Principal used for the AKS deployment"
   default     = ""
