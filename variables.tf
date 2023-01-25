@@ -25,9 +25,3 @@ variable "virtual_network_name" {
   type        = string
   default = "vnet"
 }
-variable "appid" {
-  type        = string
-}
-variable "secret" {
-  type        = string
-}

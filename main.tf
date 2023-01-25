@@ -50,6 +50,4 @@ module "aks" {
   source = "./aks"
   aks_resource_group_name = azurerm_resource_group.example.name
   aks_location = azurerm_resource_group.example.location  
-  aks_appid = var.appid
-  aks_secret = var.secret
 }

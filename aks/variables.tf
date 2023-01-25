@@ -8,9 +8,3 @@ variable "aks_resource_group_name" {
   type        = string
   default = "rgdev"
 }
-variable "aks_appid" {
-  type        = string
-}
-variable "aks_secret" {
-  type        = string
-}
