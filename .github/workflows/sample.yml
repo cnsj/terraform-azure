@@ -23,7 +23,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
       steps:
-
         - name: echo Word
           run: echo "Hello"
 
@@ -31,6 +30,5 @@ jobs:
   # This workflow contains a single job called "build"
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
       - name: echo Word
         run: echo "world!"
