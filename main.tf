@@ -41,7 +41,7 @@ resource "azurerm_storage_account" "example" {
 resource "azurerm_storage_share" "example" {
   name                 = "aks-storage-share"
   storage_account_name = "${azurerm_storage_account.example.name}"
-  quota                = 5
+  quota                = 1
 }
 
 module "aks" {
